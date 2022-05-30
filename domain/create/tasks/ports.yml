@@ -27,8 +27,7 @@
           else
         libvirt_ssh_base_port
       }}
-  tags:
-  - facts
+  tags: [always]
 
 - name: ports | rdp
   set_fact:
@@ -58,8 +57,7 @@
           else
         libvirt_rdp_base_port
       }}
-  tags:
-  - facts
+  tags: [always]
 
 - name: ports | winrm
   set_fact:
@@ -89,5 +87,4 @@
           else
         libvirt_winrm_base_port
       }}
-  tags:
-  - facts
+  tags: [always]

@@ -5,8 +5,7 @@
       (libvirt_result_domain_name is not defined)
       or (libvirt_domain_name is not defined)
       or (libvirt_domain_name != libvirt_result_domain_name)
-  tags:
-  - facts
+  tags: [always]
 
 - name: domain_id | create uuid
   command: uuidgen
@@ -15,8 +14,7 @@
   when: >
     (libvirt_domain_name is not defined)
     or (not libvirt_domain_name)
-  tags:
-  - facts
+  tags: [always]
 
 - name: domain_id | extract
   set_fact:
@@ -27,5 +25,4 @@
           else
         (libvirt_domain_uuid_result.stdout | trim)
       }}
-  tags:
-  - facts
+  tags: [always]
